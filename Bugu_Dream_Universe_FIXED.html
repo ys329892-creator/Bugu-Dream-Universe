@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1a0d28">
+<title>For My Bugu ✨</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Dancing+Script:wght@400;500;600&display=swap');
+:root{--pink:#ffc1df;--lav:#d7bdff;--cream:#fff4fb}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;overflow-x:hidden;color:#fff0fa;font-family:'Cormorant Garamond',Georgia,serif;text-align:center;background:radial-gradient(circle at 15% 15%,rgba(115,65,180,.35),transparent 38%),radial-gradient(circle at 85% 75%,rgba(230,70,155,.20),transparent 35%),linear-gradient(135deg,#080b20,#17102f 50%,#260f35)}
+#stars,#floaties{position:fixed;inset:0;overflow:hidden;pointer-events:none}
+#stars{z-index:0}#floaties{z-index:3}
+.star{position:absolute;border-radius:50%;background:#fff;box-shadow:0 0 9px #ffd6f0;animation:twinkle var(--dur) ease-in-out infinite alternate}
+.wrap{position:relative;z-index:1;width:min(100% - 28px,720px);margin:auto;padding:38px 10px 42px;animation:rise 1.4s ease both}
+.pill{display:inline-block;padding:9px 14px;border:1px solid #ffc1df44;border-radius:30px;color:#f7c8e6;font:10px Arial,sans-serif;letter-spacing:3px}
+.moon{font-size:62px;margin:25px 0 10px;filter:drop-shadow(0 0 20px #ff9bd2);animation:glow 3s ease-in-out infinite alternate}
+h1{font-size:clamp(43px,10vw,76px);line-height:1.02;font-weight:400;margin:12px 0 18px;letter-spacing:1px;text-shadow:0 0 28px #f875bf44}
+h1 span{display:block;font-family:'Dancing Script',cursive;color:var(--pink);font-size:1.18em;margin-top:9px}
+h2,h3{color:#ffd5ee;text-shadow:0 0 8px rgba(255,130,205,.55),0 0 20px rgba(175,105,255,.28)}
+h2{letter-spacing:.5px}
+.rule{color:var(--pink);letter-spacing:8px;margin:24px 0}
+.lead{max-width:550px;margin:22px auto;font-size:clamp(19px,4vw,23px);line-height:1.75;color:#f8e8f4}
+.soft{color:#e6c8ff;font-style:italic}.byline{font-size:18px;color:#f6c9e5}
+.actions{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin:28px auto 8px}
+button{font-family:Georgia,serif;font-size:15px;color:white;padding:13px 19px;border:1px solid rgba(255,200,235,.35);border-radius:14px;background:linear-gradient(135deg,#d65a9f,#8455b7);box-shadow:0 0 12px rgba(200,100,255,.12);cursor:pointer;transition:transform .25s,box-shadow .25s}
+button:hover{transform:translateY(-2px);box-shadow:0 0 20px rgba(255,150,220,.32)}
+button:focus-visible{outline:2px solid white;outline-offset:4px}
+button:active{transform:scale(.97)}
+button.alt{background:#ffffff0d;border-color:#dfc3f477}
+.card{display:none;position:relative;margin:20px auto;padding:25px 22px;border:1px solid rgba(255,182,225,.28);border-radius:22px;background:rgba(255,255,255,.055);box-shadow:0 8px 32px rgba(0,0,0,.22),0 0 22px rgba(165,100,255,.10);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);text-align:center;animation:rise .75s ease both}
+.card h2{margin:0 0 14px;font-family:'Dancing Script',cursive;font-size:clamp(31px,7vw,42px);font-weight:500;color:var(--pink)}
+.card p{font-size:clamp(18px,4vw,21px);line-height:1.8;margin:12px auto}
+.signature{font:29px 'Dancing Script',cursive!important;color:var(--pink);margin-top:24px!important}
+.tiny{color:#dec4ff;font-style:italic}
+.final{padding:38px 4px 5px;font:clamp(25px,6vw,34px) 'Dancing Script',cursive;color:var(--pink);line-height:1.5}
+.footer{font:10px Arial,sans-serif;letter-spacing:3px;color:#bda5ca;margin-top:25px}
+#music{position:fixed;z-index:5;right:12px;bottom:12px;font:12px Arial,sans-serif;padding:11px 15px;background:#281238ef}
+.float{position:absolute;bottom:-35px;animation:up var(--dur) linear forwards;opacity:0}
+.petal{position:absolute;top:-30px;animation:down var(--dur) linear forwards;opacity:.85}
+.magic-particle{position:fixed;left:var(--x);bottom:-35px;z-index:999;pointer-events:none;opacity:0;font-size:var(--size);animation:magicFloat var(--duration) linear forwards}
+@keyframes twinkle{from{opacity:.18;transform:scale(.7)}to{opacity:1;transform:scale(1.25)}}
+@keyframes glow{from{filter:drop-shadow(0 0 8px #ffb6e8)}to{filter:drop-shadow(0 0 28px #ff80cc)}}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes up{0%{opacity:0;transform:translateY(0) rotate(0)}12%{opacity:.85}90%{opacity:.7}100%{opacity:0;transform:translateY(-110vh) rotate(35deg)}}
+@keyframes down{to{transform:translateY(110vh) rotate(480deg)}}
+@keyframes magicFloat{0%{transform:translateY(0) rotate(0) scale(.7);opacity:0}12%{opacity:.8}85%{opacity:.7}100%{transform:translateY(-110vh) rotate(35deg) scale(1.15);opacity:0}}
+.memory-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:22px;margin-top:24px}
+.memory-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,190,220,.35);border-radius:22px;padding:14px;overflow:hidden;box-shadow:0 8px 25px rgba(255,80,160,.14);text-align:center}
+.memory-card img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:contain;background:rgba(20,15,40,.5);border-radius:16px;margin-bottom:16px}
+.memory-card h3{margin:10px 0;line-height:1.5;color:#ffc4df}
+.memory-card p{line-height:1.8;font-size:.96rem;color:#fff0f7}
+input{max-width:100%;padding:12px;border-radius:10px;border:1px solid #ffc1df99;background:#fff;color:#24112c}
+@media(max-width:480px){.wrap{padding-top:30px}.card{padding:22px 17px}button{padding:13px 16px}.memory-gallery{grid-template-columns:1fr;gap:18px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;scroll-behavior:auto!important;transition:none!important}.magic-particle{display:none}}
+</style>
+</head>
+<body>
+<div id="stars" aria-hidden="true"></div><div id="floaties" aria-hidden="true"></div>
+<main class="wrap">
+  <div class="pill">A LITTLE UNIVERSE MADE JUST FOR YOU</div>
+  <div class="moon" aria-hidden="true">🌙</div>
+  <h1>Happy Birthday,<span>My Bugu 💗</span></h1>
+  <div class="rule">✧ ── ♡ ── ✧</div>
+  <p class="lead">If the stars could carry wishes,<br>I would ask every single one of them<br>to bring a little more happiness into your life. ✨</p>
+  <p class="lead soft">Tonight, this little universe belongs to you. 🌸</p>
+  <p class="byline"><i>Carefully created with love, by Puchu 💌</i></p>
+  <div class="rule">♡ ✦ ♡</div>
+  <div class="actions">
+    <button type="button" onclick="reveal('wish')">🎁 Your First Surprise</button>
+    <button type="button" class="alt" onclick="reveal('letter')">💌 Open Your Letter</button>
+    <button type="button" class="alt" onclick="reveal('confession')">💗 One Little Confession</button>
+  </div>
+  <div class="actions">
+    <button type="button" class="alt" onclick="reveal('secret')">🔐 Our Last Secret Romantic Surprise</button>
+    <button type="button" class="alt" onclick="reveal('cuteThings')">💗 Cute Things I Want</button>
+    <button type="button" class="alt" onclick="reveal('letters')">💌 Letters From My Heart</button>
+    <button type="button" class="alt" onclick="reveal('gift')">🎁 A Mystery Gift</button>
+    <button type="button" class="alt" onclick="reveal('missyou')">🫙 Open When You Miss Me</button>
+    <button type="button" class="alt" onclick="reveal('universe')">🌌 Our Universe</button>
+  </div>
+
+  <section id="secret" class="card" aria-live="polite">
+    <h2>🔐 Our Secret Romantic World 💗</h2>
+    <p>Only for Puchu &amp; Bugu ❤️</p>
+    <p><strong>When did we meet for the first time?</strong></p>
+    <input id="secretAnswer" type="text" placeholder="Enter our special date">
+    <button type="button" onclick="unlockSecret()">Unlock Our Secret 💋</button>
+    <div id="secretMessage" hidden>
+      <p>Bugu, can I tell you a secret? 🙈❤️</p>
+      <p>Sometimes I imagine us talking late at night, teasing each other, blushing at silly little things, and laughing so much that neither of us wants the conversation to end. 😭😂💗</p>
+      <p>And sometimes, I might flirt with you a little extra… just to see that cute reaction of yours. Hehehe! 😏🙈</p>
+      <h3>❤️‍🔥 A Little More of Us…</h3>
+      <p>Bugu, I want more and more deeply romantic moments with you… 🫠❤️‍🔥</p>
+      <p>I want those moments when we get so lost in each other that the rest of the world fades away… when we stop overthinking, let ourselves enjoy the moment, and simply follow the feelings we both share. 🌙💗</p>
+      <p>More pleasure in the little things, more cute romantic nights, more pampering, more cuddles that last a little longer, more sweet kisses, more playful teasing, and more moments when we make each other feel loved, wanted, and truly special. 🙈💋🫂</p>
+      <p>I want us to feel comfortable enough to express our wishes openly, explore our romantic side together, and never feel pressured to do anything either of us isn't ready for. Just you and me, being honest, caring, playful, and completely ourselves. ❤️‍🔥🌹</p>
+      <p>And most importantly, Bugu… I want us to create our own little world, where affection comes naturally, every boundary is respected, and every beautiful moment is something we both want. 🥹💗</p>
+    </div>
+  </section>
+
+  <section id="letters" class="card" aria-live="polite">
+    <h2>💌 Letters From My Heart</h2>
+    <p>Little letters, written just for you, Bugu. ❤️</p>
+    <button type="button" class="alt" onclick="reveal('letterOne')">💗 A Little Love Letter</button>
+    <div id="letterOne" hidden><p>Bugu, you make ordinary moments feel special. No matter how far apart we are, you have a place in my heart. Always you, always us. 🌙💗</p></div>
+  </section>
+
+  <section id="gift" class="card" aria-live="polite">
+    <h2>🎁 A Mystery Gift</h2><p>A little surprise is waiting just for you!</p>
+    <button type="button" class="alt" onclick="reveal('giftMessage')">🎀 Open Your Gift</button>
+    <div id="giftMessage" hidden><h3>Surprise, Bugu! 💝</h3><p>If I could wrap one thing up and give it to you, it would be a thousand little moments of happiness, hugs, laughter and love. 🫂✨</p></div>
+  </section>
+
+  <section id="missyou" class="card" aria-live="polite">
+    <h2>🫙 Open When You Miss Me</h2><p>Choose a little note whenever you need a smile. 💗</p>
+    <button type="button" class="alt" onclick="reveal('missNote')">💌 Open Your Note</button>
+    <div id="missNote" hidden><p>Even when we're apart, remember that you matter to me. Imagine the warmest hug from me, just for you. 🫂🌙</p></div>
+  </section>
+
+  <section id="universe" class="card" aria-live="polite">
+    <h2>🌌 Our Universe</h2><p>Under the same sky, with a little universe of our own. ✨</p>
+    <button type="button" class="alt" onclick="reveal('universeMessage')">⭐ Touch Our Star</button>
+    <div id="universeMessage" hidden><h3>✨ You &amp; Me ∞</h3><p>If I could choose one star in the whole universe, I'd choose the one that reminds me of you. Same sky, same dreams, and countless memories still waiting for us. 💗🌙</p></div>
+  </section>
+
+  <section id="cuteThings" class="card" aria-live="polite">
+    <h2>💗 Cute Things I Want</h2>
+    <p>Little dreams I want to share with you, Bugu. 🫂❤️</p>
+    <div class="memory-gallery">
+      <article class="memory-card"><img src="images/cute-1.jpg" alt="A sweet kiss"><h3>A Kiss That Says Everything 💋</h3><p>I want those little moments with you when words aren't needed—just your closeness, your smile, and a kiss that says everything my heart feels.</p></article>
+      <article class="memory-card"><img src="images/cute-2.jpg" alt="A love that feels like home"><h3>A Love That Feels Like Home ❤️</h3><p>I want a love where we can be ourselves, hold each other close, and feel like we've found our favourite place in the whole world.</p></article>
+      <article class="memory-card"><img src="images/cute-3.jpg" alt="Sleepy cuddles together"><h3>Sleepy Cuddles With You 🌙</h3><p>I want sleepy cuddles, silly smiles, and those peaceful moments when being in your arms feels like the safest place ever.</p></article>
+      <article class="memory-card"><img src="images/cute-4.jpg" alt="A comforting hug"><h3>Hugs That Make Everything Better 🫂</h3><p>I want to hug you a little longer every time, remind you that you're loved, and make even your hardest days feel lighter.</p></article>
+      <article class="memory-card"><img src="images/cute-5.jpg" alt="A close romantic cuddle"><h3>Little Moments, Forever Us 💞</h3><p>I wanna sleep on your lap, your belly, and your chest 😴🫠🧿🫂❤️</p><p>Little moments with you are the ones I want to keep forever. 💗</p></article>
+    </div>
+  </section>
+
+  <section id="wish" class="card" aria-live="polite">
+    <h2>A Wish For You 🌷</h2>
+    <p>May your smile always find a reason to return. May your heart feel peaceful, your dreams grow bigger, and your days be filled with little moments worth remembering.</p>
+    <p class="tiny">You deserve so many beautiful things. ✨</p>
+  </section>
+
+  <section id="letter" class="card" aria-live="polite">
+    <h2>Dear Bugu, 💗</h2>
+    <p>Happy Birthday to someone I wanted to make feel a little extra special today. 🎂🌸</p>
+    <p>If I could wrap up all the happiness in the world and place it in your hands, I would do it without thinking twice. I hope life gives you beautiful surprises, peaceful nights, and countless reasons to smile.</p>
+    <p>When days feel difficult, I hope you remember how precious you are and how much goodness you deserve. Never stop dreaming, laughing, or being yourself.</p>
+    <p>And if this tiny universe makes you smile even for a moment, then creating it was worth every second. 🫂</p>
+    <p class="signature">With love,<br>Your Puchu 💌</p>
+  </section>
+
+  <section id="confession" class="card" aria-live="polite">
+    <h2>One Little Confession 💗</h2>
+    <p>Maybe I cannot give you the whole universe, but I can make you a little corner of it, filled with stars, wishes, and words chosen just for you. 🌙</p>
+    <p>There is something beautiful about wanting to see someone smile—and today, I wanted to create one more reason for yours. 💖</p>
+    <p class="tiny">You make this little surprise meaningful, Bugu. 🌹</p>
+  </section>
+
+  <div class="final">May every new year bring you closer to your dreams,<br>and may life always be gentle with your heart. ✨</div>
+  <div class="rule">🌸 ♡ 🌸</div>
+  <div class="footer">MADE OF LITTLE DREAMS &amp; LOTS OF LOVE</div>
+</main>
+<button id="music" type="button" onclick="toggleMusic()" aria-label="Toggle gentle melody">♫ Music: Off</button>
+<script>
+(function(){
+  const stars=document.getElementById('stars');
+  const floaties=document.getElementById('floaties');
+  for(let i=0;i<95;i++){
+    const s=document.createElement('span');s.className='star';
+    const size=Math.random()*2.3+1;
+    s.style.width=size+'px';s.style.height=size+'px';
+    s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';
+    s.style.setProperty('--dur',(2+Math.random()*4)+'s');
+    s.style.animationDelay=Math.random()*4+'s';stars.appendChild(s);
+  }
+
+  window.reveal=function(id){
+    const target=document.getElementById(id);
+    if(!target)return;
+    if(target.classList.contains('card')){
+      const opening=getComputedStyle(target).display==='none';
+      target.style.display=opening?'block':'none';
+      if(opening)setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:'center'}),80);
+    }else{
+      target.hidden=!target.hidden;
+      if(!target.hidden)setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:'center'}),80);
+    }
+  };
+
+  function floatHeart(){
+    const e=document.createElement('span');e.className='float';
+    e.textContent=['♡','♥','💕','✨'][Math.floor(Math.random()*4)];
+    e.style.left=Math.random()*100+'vw';e.style.fontSize=(15+Math.random()*18)+'px';
+    e.style.setProperty('--dur',(7+Math.random()*5)+'s');floaties.appendChild(e);
+    setTimeout(()=>e.remove(),13000);
+  }
+  function fallPetal(){
+    const e=document.createElement('span');e.className='petal';
+    e.textContent=['🌸','🌷','✿'][Math.floor(Math.random()*3)];
+    e.style.left=Math.random()*100+'vw';e.style.fontSize=(12+Math.random()*13)+'px';
+    e.style.setProperty('--dur',(9+Math.random()*7)+'s');floaties.appendChild(e);
+    setTimeout(()=>e.remove(),17000);
+  }
+  setInterval(floatHeart,850);setInterval(fallPetal,1800);
+
+  let ctx=null,timer=null,on=false,index=0;
+  const notes=[261.63,329.63,392,329.63,293.66,349.23,440,349.23];
+  function note(){
+    if(!ctx||!on)return;
+    const osc=ctx.createOscillator(),gain=ctx.createGain();
+    osc.type='sine';osc.frequency.value=notes[index++%notes.length];
+    gain.gain.setValueAtTime(.0001,ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(.025,ctx.currentTime+.08);
+    gain.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+.6);
+    osc.connect(gain);gain.connect(ctx.destination);osc.start();osc.stop(ctx.currentTime+.65);
+  }
+  window.toggleMusic=async function(){
+    const b=document.getElementById('music');
+    if(!on){
+      try{
+        ctx=ctx||new(window.AudioContext||window.webkitAudioContext)();
+        await ctx.resume();on=true;b.textContent='♫ Music: On';note();timer=setInterval(note,700);
+      }catch(e){b.textContent='Music unavailable';}
+    }else{
+      on=false;clearInterval(timer);b.textContent='♫ Music: Off';
+      if(ctx)await ctx.suspend();
+    }
+  };
+
+  const symbols=['✨','💗','⭐','♡'];
+  function addParticle(){
+    if(document.hidden)return;
+    const particle=document.createElement('span');particle.className='magic-particle';
+    particle.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    particle.style.setProperty('--x',Math.random()*100+'vw');
+    particle.style.setProperty('--size',(12+Math.random()*12)+'px');
+    particle.style.setProperty('--duration',(7+Math.random()*5)+'s');
+    document.body.appendChild(particle);
+    particle.addEventListener('animationend',()=>particle.remove(),{once:true});
+  }
+  addParticle();setInterval(addParticle,850);
+
+  window.unlockSecret=function(){
+    const input=document.getElementById('secretAnswer');
+    const answer=input.value.trim().toLowerCase();
+    if(answer==='28 april'){
+      document.getElementById('secretMessage').hidden=false;
+      document.getElementById('secretMessage').scrollIntoView({behavior:'smooth',block:'center'});
+    }else{
+      alert('Try our special date again, Puchu! ❤️');
+    }
+  };
+})();
+</script>
+</body>
+</html>
